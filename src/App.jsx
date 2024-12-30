@@ -1,18 +1,16 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
-// import { Input } from 'postcss'
 import { Header } from './components/Header'
-import { Input } from './components/ui/input'
-import { Home } from './components/Home'
+import { Footer } from './components/Footer'
+// import { Box } from './components/Box'
 
 function App() {
     return (
       <>
         <Header />
-        <Input className="w-50" variant="outline" placeholder="Search..." />
-        <Home />
+        <main className='min-h-[90vh]'>
+
+        </main>
+        {/* <Box /> */}
+        <Footer />
       </>
     )
 }

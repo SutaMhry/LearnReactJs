@@ -1,17 +1,35 @@
+import { Input } from "./ui/input";
 import { Button } from "./ui/button";
+import { IoCart, IoHeart } from "react-icons/io5";
+import { Separator } from "./ui/separator";
 
 export const Header = () => {
   return (
-    <header className="bg-transparent justify-between items-center flex-row flex">
-        <p className="text-2xl font-bold hover:cursor-pointer">Cerpen</p>
-        <div className="flex flex-row items-center gap-4">
-            <Button variant="ghost" size="lg">Stored</Button>
-            <Button variant="">Home</Button>
-            <Button variant="">Category</Button>
+    <header className="h-16 border-b flex items-center justify-between px-8">
+      {/* Brand */}
+      <p className="text-2xl font-bold hover:cursor-pointer">E-Commerce</p>
+
+      {/* Search Bar */}
+      <Input className="max-w-[600px]" placeholder="Search..." />
+
+      {/* BUttons */}
+      <div className="flex space-x-4 h-5 items-center">
+        <div className="flex space-x-2">
+          <Button size="icon" variant="ghost">
+            <IoCart className="h-6 w-6 "/>
+          </Button>
+          <Button size="icon" variant="ghost">
+            <IoHeart className="h-6 w-6 "/>
+          </Button>
         </div>
-        <div className="flex flex-row items-center gap-4">
-            <Button variant="">Contact</Button>
+
+        <Separator orientation="vertical" className="h-full" />
+
+        <div className="flex space-x-2">
+          <Button>Log In</Button>
+          <Button variant="outline">Sign Up</Button>
         </div>
+      </div>
     </header>
   );
 };
