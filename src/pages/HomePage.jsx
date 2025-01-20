@@ -1,4 +1,8 @@
 import { ProductCart } from "../components/ProductCart";
+import { axiosInstance } from "../lib/axios";
+import { Button } from "../components/ui/button";
+import { useState, useEffect } from "react";
+import { use } from "react";
 
 const productsRaw = [
   {
@@ -18,7 +22,12 @@ const productsRaw = [
 ];
 
 const HomePage = () => {
-  const products = productsRaw.map((product) => {
+
+  const [productIsLoading, setProductIsLoading] = useState(false);
+
+  const [products, setProducts] = useState([])
+  
+  const productsList = products.map((product) => {
     return (
       <ProductCart
         image={product.image}
@@ -28,6 +37,25 @@ const HomePage = () => {
       />
     );
   });
+
+  const fetchProducts = async () => {
+    setProductIsLoading(true);
+    try {
+      const response = await axiosInstance.get("/products");
+      console.log(response.data);
+      setProducts(response.data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setProductIsLoading(false);
+    }
+  }
+
+  // Mount fetchProducts when first render
+  useEffect(() => {
+    fetchProducts();
+  }, [])
+
   return (
     <>
       <main className="min-h-[80vh] max-w-screen-md mx-auto px-4 mt-8">
@@ -40,7 +68,11 @@ const HomePage = () => {
             confidence throughout your days.
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-4">{products}</div>
+
+        {
+          productIsLoading ? <p>Loading...</p> : <div className="grid grid-cols-2 gap-4">{productsList}</div>
+        }
+
       </main>
     </>
   );

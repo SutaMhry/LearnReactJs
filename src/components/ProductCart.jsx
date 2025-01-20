@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "./ui/button";
 import { IoIosAdd, IoIosRemove } from "react-icons/io"
 
@@ -17,6 +17,22 @@ export const ProductCart = ({image, name, price, stock}) => {
       setQty(qty - 1);
     }
   };
+
+  // // Mount
+  // useEffect(() => {
+  //   alert("COMPONENT DID MOUNT")
+  // }, []);
+
+  // // UPDATE
+  // useEffect(() => {
+  //   alert("COMPONENT DID UPDATE")
+  // }, [qty]);
+
+  // useEffect(() => {
+  //   return () => {
+  //     alert("COMPONENT WILL UNMOUNT")
+  //   }
+  // }, [])
 
   return (
     <div className="p-4 border rounded md:max-w-96 flex flex-col gap-4">
