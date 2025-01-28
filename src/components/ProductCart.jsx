@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react"
 import { Button } from "./ui/button";
 import { IoIosAdd, IoIosRemove } from "react-icons/io"
+import { Link } from "react-router-dom";
 
-export const ProductCart = ({image, name, price, stock}) => {
+export const ProductCart = ({image, name, price, stock, id}) => {
 
   const [qty, setQty] = useState(0);
 
@@ -36,18 +37,20 @@ export const ProductCart = ({image, name, price, stock}) => {
 
   return (
     <div className="p-4 border rounded md:max-w-96 flex flex-col gap-4">
-      <div className="aspect-square w-full overflow-hidden">
+      <Link to={"/product/" + id } className="aspect-square w-full overflow-hidden">
         <img
           className="w-full"
           src={image}
           alt="product"
         />
-      </div>
-      <div>
+      </Link>
+
+      <Link to={"/product/" + id }>
         <p className="text-md">{name}</p>
         <p className="text-xl font-semibold">Rp {price.toLocaleString('id-ID')}</p>
         <p className="text-muted-foreground text-sm">In Stock: {stock}</p>
-      </div>
+      </Link>
+
       <div className="flex flex-col gap-2">
         {/* Button Qty */}
         <div className="flex justify-between items-center">

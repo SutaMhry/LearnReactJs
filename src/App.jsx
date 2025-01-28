@@ -3,6 +3,7 @@ import { Footer } from "./components/Footer"
 import LoginPage from "./pages/LoginPage"
 import HomePage from "./pages/HomePage";
 import  CartPage from "./pages/CartPage";
+import  ProductDetailPage from "./pages/ProductDetailPage";
 import  NotFoundPage from "./pages/NotFoundPage";
 import { Routes, Route } from "react-router-dom";
 
@@ -15,6 +16,7 @@ function App() {
       <Route path="/login" Component={LoginPage} />
       <Route path="/" Component={HomePage} />
       <Route path="/cart" Component={CartPage} />
+      <Route path="/product/:productId" Component={ProductDetailPage} />
       <Route path="*" Component={NotFoundPage} />
     </Routes>
     <Footer />

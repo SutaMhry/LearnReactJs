@@ -30,6 +30,7 @@ const HomePage = () => {
   const productsList = products.map((product) => {
     return (
       <ProductCart
+        id={product.id}
         image={product.image}
         name={product.name}
         price={product.price}
