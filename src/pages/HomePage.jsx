@@ -1,25 +1,25 @@
 import { ProductCart } from "../components/ProductCart";
-import { axiosInstance } from "../lib/axios";
+import { axiosInstance } from "@/lib/axios";
 import { Button } from "../components/ui/button";
 import { useState, useEffect } from "react";
 import { use } from "react";
 
-const productsRaw = [
-  {
-    name: "Dark t-shirt",
-    price: 100000,
-    stock: 5,
-    image:
-      "https://media.istockphoto.com/id/483960103/id/foto/kaos-hitam-kosong-depan-dengan-jalur-kliping.jpg?s=612x612&w=0&k=20&c=o0LjeucE_FTs7-7Z_DU1JFyyqfseJYLsf3Wbb-QsBJI=",
-  },
-  {
-    name: "White t-shirt",
-    price: 150000,
-    stock: 0,
-    image:
-      "https://media.istockphoto.com/id/482948743/id/foto/kaos-putih-kosong-depan-dengan-jalur-kliping.jpg?b=1&s=612x612&w=0&k=20&c=nMgLCx5WHxAhtYjT4iwNkZDbR226nBOjTc8ZQdLjcSY= ",
-  },
-];
+// const productsRaw = [
+//   {
+//     name: "Dark t-shirt",
+//     price: 100000,
+//     stock: 5,
+//     image:
+//       "https://media.istockphoto.com/id/483960103/id/foto/kaos-hitam-kosong-depan-dengan-jalur-kliping.jpg?s=612x612&w=0&k=20&c=o0LjeucE_FTs7-7Z_DU1JFyyqfseJYLsf3Wbb-QsBJI=",
+//   },
+//   {
+//     name: "White t-shirt",
+//     price: 150000,
+//     stock: 0,
+//     image:
+//       "https://media.istockphoto.com/id/482948743/id/foto/kaos-putih-kosong-depan-dengan-jalur-kliping.jpg?b=1&s=612x612&w=0&k=20&c=nMgLCx5WHxAhtYjT4iwNkZDbR226nBOjTc8ZQdLjcSY= ",
+//   },
+// ];
 
 const HomePage = () => {
 
