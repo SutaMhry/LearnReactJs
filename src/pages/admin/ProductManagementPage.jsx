@@ -109,13 +109,14 @@ const ProductManagementPage = () => {
             disabled={searchParams.get("page") == 1}
             onClick={handlePreviousPage}
             variant="ghost"
+            className="px-4 py-2 flex items-center"
           >
             <ChevronsLeft className="h-6 w-6 mr-2" />
             Previous
           </Button>
         </PaginationItem>
 
-        <PaginationItem classNamemx-8 fz-sm>
+        <PaginationItem className="flex items-center mx-8 text-sm">
           Page {searchParams.get("page")}
         </PaginationItem>
 
@@ -124,6 +125,7 @@ const ProductManagementPage = () => {
             disabled={!hasNextPage}
             onClick={handleNextPage}
             variant="ghost"
+            className="px-4 py-2 flex items-center"
           >
             Next
             <ChevronsRight className="h-6 w-6 ml-2" />
